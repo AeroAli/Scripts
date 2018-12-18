@@ -1,0 +1,85 @@
+def enumProcs(host):
+	command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
+
+	procsDict = splitIntoDict(subprocess.run(command+["enumprocs"], encoding="ascii", stdout=subprocess.PIPE).stdout.splitlines())
+    
+    return procsDict
+#end enumProcs
+
+def enumDrivers(host):
+	command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
+
+	driversDict = splitIntoDict(subprocess.run(command+["enumdrivers"], encoding="ascii", stdout=subprocess.PIPE).stdout.splitlines())
+    
+    return driversDict
+#end enumDrivers
+
+def enumPorts(host):
+	command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
+
+	portsDict = splitIntoDict(subprocess.run(command+["enumports"], encoding="ascii", stdout=subprocess.PIPE).stdout.splitlines())
+    
+    return portsDict
+#end enumPorts
+
+def enumTrust(host):
+	command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
+
+	trustDict = splitIntoDict(subprocess.run(command+["enumtrust"], encoding="ascii", stdout=subprocess.PIPE).stdout.splitlines())
+    
+    return trustDict
+#end enumTrust
+
+def enumPrivs(host):
+    command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
+    
+    # Enumerate privs and rids
+    privsDict = splitIntoDict(subprocess.run(command+["enumprivs"], encoding="ascii", stdout=subprocess.PIPE).stdout.splitlines())
+  
+    return privsDict
+# end enumPrivs
+
+def enumProcdatatypes(host):
+    command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
+    
+    # Enumerate procdatatypes and rids
+    procdatatypesDict = splitIntoDict(subprocess.run(command+["enumprocdatatypes"], encoding="ascii", stdout=subprocess.PIPE).stdout.splitlines())
+  
+    return procdatatypesDict
+# end enumProcdatatypes
+
+def enumMonitors(host):
+    command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
+    
+    # Enumerate monitors and rids
+    monitorsDict = splitIntoDict(subprocess.run(command+["enummonitors"], encoding="ascii", stdout=subprocess.PIPE).stdout.splitlines())
+  
+    return monitorsDict
+# end enumMonitors
+
+def enumAlsGroupsD(host):
+    command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
+    
+    # Enumerate enumalsgroups domain and rids
+    enumalsgroupsdomainDict = splitIntoDict(subprocess.run(command+["enumenumalsgroups domain"], encoding="ascii", stdout=subprocess.PIPE).stdout.splitlines())
+  
+    return enumalsgroupsdomainDict
+# end enumAlsGroupsD
+
+def enumAlsGroupsB(host):
+    command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
+    
+    # Enumerate enumalsgroups domain and rids
+    enumalsgroupsbuiltinDict = splitIntoDict(subprocess.run(command+["enumenumalsgroups builtin"], encoding="ascii", stdout=subprocess.PIPE).stdout.splitlines())
+  
+    return enumalsgroupsbuiltinDict
+# end enumAlsGroupsD
+
+def enumDomains(host):
+    command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
+    
+    # Enumerate domains and rids
+    domainsDict = splitIntoDict(subprocess.run(command+["enumdomains"], encoding="ascii", stdout=subprocess.PIPE).stdout.splitlines())
+  
+    return domainsDict
+# end enumDomains

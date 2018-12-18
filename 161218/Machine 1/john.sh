@@ -1,0 +1,1 @@
+john --format=NT /root/Desktop/192.168.0.1.txt >> John1.txt
