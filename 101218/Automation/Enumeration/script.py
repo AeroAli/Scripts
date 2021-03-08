@@ -120,4 +120,4 @@ if __name__ == "__main__":
             print("User: " + user + "\t", end="")
             if len(user) < 10:
                 print("\t", end="")
-			print("| SID: " + results[host]["users"][user]["sid"]) 
+            print("| SID: " + results[host]["users"][user]["sid"])

@@ -22,7 +22,7 @@ def splitIntoDict(txt):
         # Splice out values and store in a dictionary
         d[txt[index][0][txt[index][0].find(":[")+2:-1]] = {"name": txt[index][0][txt[index][0].find(":[")+2:-1], "rid": txt[index][1][5:-1]}
     return d
-# end splictIntoDict
+# end splitIntoDict
 
 def enumAliases(host):
     command = ["rpcclient", host, "-U", username + "%" + password, "-c"]
